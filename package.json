@@ -1,0 +1,28 @@
+{
+  "name": "textureatlas2css",
+  "version": "1.0.0",
+  "description": "Generates a Css from a kenneys xml",
+  "main": "src/main.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jarivas/TextureAtlas2Css.git"
+  },
+  "keywords": [
+    "kenney",
+    "css"
+  ],
+  "author": "me@jarivas.work",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/jarivas/TextureAtlas2Css/issues"
+  },
+  "homepage": "https://github.com/jarivas/TextureAtlas2Css#readme",
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.15.4",
+    "jest": "^27.3.1"
+  }
+}
