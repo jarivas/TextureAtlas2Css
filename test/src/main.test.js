@@ -1,5 +1,7 @@
 import PairFinder from '../../modules/PairFinder.js'
 import AtlasReader from '../../modules/AtlasReader.js'
+import CssWriter from '../../modules/CssWriter.js'
+import { readFile } from 'fs/promises'
 
 test('Get sheets files', () => {
     PairFinder.GetFiles('./test/Spritesheet')
@@ -43,5 +45,34 @@ test('Parse content into objects', async () => {
             width: '16',
             height: '50'
         })
+    }
+});
+
+test('Generate the css content', async () => {
+    const files = await PairFinder.GetFiles('./test/Spritesheet')
+
+    for (let pair of PairFinder.FindPairs(files)) {
+        const content = await AtlasReader.GetFileContent(`./test/Spritesheet/${pair}xml`)
+        const sprites = AtlasReader.ParseContent(content)
+        
+        const cssContent = CssWriter.CssGenerator(sprites, pair)
+
+        expect(cssContent.length).not.toBe(0)
+    }
+});
+
+test('Create the css file', async () => {
+    const files = await PairFinder.GetFiles('./test/Spritesheet')
+
+    for (let pair of PairFinder.FindPairs(files)) {
+        const content = await AtlasReader.GetFileContent(`./test/Spritesheet/${pair}xml`)
+        const sprites = AtlasReader.ParseContent(content)
+        const fileName = `./test/Spritesheet/${pair}css`
+        
+        CssWriter.WriteFile(fileName, CssWriter.CssGenerator(sprites, pair))
+
+        const cssContent = await readFile(fileName, 'utf8')
+
+        expect(cssContent.length).not.toBe(0)
     }
 });
