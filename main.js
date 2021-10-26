@@ -1,6 +1,8 @@
-import PairFinder from '../modules/PairFinder.js'
-import AtlasReader from '../modules/AtlasReader.js'
-import CssWriter from '../modules/CssWriter.js'
+#!/usr/bin/env node
+
+import PairFinder from './modules/PairFinder.js'
+import AtlasReader from './modules/AtlasReader.js'
+import CssWriter from './modules/CssWriter.js'
 
 const myArgs = process.argv.slice(2)
 

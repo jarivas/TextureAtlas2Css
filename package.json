@@ -2,7 +2,7 @@
   "name": "textureatlas2css",
   "version": "1.0.0",
   "description": "Generates a Css from a kenneys xml",
-  "main": "src/main.js",
+  "main": "main.js",
   "type": "module",
   "scripts": {
     "test": "jest"
@@ -24,5 +24,8 @@
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.15.4",
     "jest": "^27.3.1"
+  },
+  "bin":{
+    "textureatlas2css": "./main.js"
   }
 }

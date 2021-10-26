@@ -1,11 +1,18 @@
 # TextureAtlas2Css
 
-Example of usage 
+## Example of usage 
+
 ```
-node src/main.js ./test/Spritesheet
+./main.js ./test/Spritesheet
 ```
 
-Demo
+## Example of usage as package
+
+```
+textureatlas2css ./test/Spritesheet
+```
+
+## Demo
 ```
 node demo/server.js
 ```
