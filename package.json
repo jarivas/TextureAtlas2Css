@@ -1,6 +1,6 @@
 {
   "name": "textureatlas2css",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Generates a Css from a kenneys xml",
   "main": "main.js",
   "type": "module",
